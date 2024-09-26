@@ -7,7 +7,7 @@ function App() {
     { id: 2, title: "Read a book", completed: false },
   ]);
   const [newTodo, setNewTodo] = useState('');
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('none');
 
   const toggleTodo = (id) => {
     setTodos(
