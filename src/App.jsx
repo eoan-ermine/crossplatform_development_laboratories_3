@@ -7,6 +7,7 @@ function App() {
     { id: 2, title: "Read a book", completed: false },
   ]);
   const [newTodo, setNewTodo] = useState('');
+  const [filter, setFilter] = useState('');
 
   const toggleTodo = (id) => {
     setTodos(
@@ -33,6 +34,12 @@ function App() {
     setNewTodo('');
   };
 
+  const applyFilter = function (items, filter) {
+    if (filter == "none") return items;
+    if (filter == "active") return todos.filter((todo) => todo.completed == false);
+    if (filter == "inactive") return todos.filter((todo) => todo.completed == true);
+  };
+
   return (
     <div>
       <h1>My To-Do List</h1>
@@ -45,7 +52,18 @@ function App() {
         />
         <button type="submit">Add</button>
       </form>
-      <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo}/>
+      <span>Filter:</span>
+      <select
+        name="filter"
+        id="filter-select"
+        onChange={(e) => setFilter(e.target.value)}
+        value={filter}
+      >
+        <option value="none">None</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <TodoList todos={applyFilter(todos, filter)} toggleTodo={toggleTodo} removeTodo={removeTodo}/>
     </div>
   );
 }
