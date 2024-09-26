@@ -16,6 +16,10 @@ function App() {
     );
   }
 
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id != id));
+  }
+
   const addTodo = (e) => {
     e.preventDefault();
     if (!newTodo) return;
@@ -41,7 +45,7 @@ function App() {
         />
         <button type="submit">Add</button>
       </form>
-      <TodoList todos={todos} toggleTodo={toggleTodo}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo}/>
     </div>
   );
 }
