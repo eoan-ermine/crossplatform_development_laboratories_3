@@ -89,7 +89,7 @@ function DndPage() {
       >
         {Object.entries(columns).map(([columnId, column], index) => {
           return (
-            <div
+            <div class="border border-transparent bg-blue-600"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -123,6 +123,7 @@ function DndPage() {
                           {(provided, snapshot) => {
                             return (
                               <div
+                                class="rounded-full shadow-2xl"
                                 ref={provided.innerRef}
                                 {...provided.draggableProps}
                                 {...provided.dragHandleProps}
@@ -139,7 +140,7 @@ function DndPage() {
                                 }}
                               >
                                 {item.content}
-                                <button
+                                <button class="rounded-full"
                                   ref={provided.innerRef}
                                   style={{
                                     color: "#FF0000",
