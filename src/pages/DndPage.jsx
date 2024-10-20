@@ -21,6 +21,14 @@ function DndPage() {
       name: "In Progress",
       items: [],
     },
+    done: {
+      name: "Done",
+      items: []
+    },
+    stale: {
+      name: "Stale",
+      items: []
+    }
   });
   const onDragEnd = (result, columns, setColumns) => {
     const { source, destination } = result;
