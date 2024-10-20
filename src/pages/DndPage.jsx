@@ -30,6 +30,20 @@ function DndPage() {
       items: []
     }
   });
+
+  const removeTodo = (ident) => {
+    var newColumns = {}
+    for (var [key, column] of Object.entries(columns)) {
+      var items = column.items.filter((element) => element.id != ident)
+      newColumns[key] = {
+        id: column.id,
+        name: column.name,
+        items: items
+      }
+    }
+    setColumns(newColumns)
+  }
+
   const onDragEnd = (result, columns, setColumns) => {
     const { source, destination } = result;
     if (!destination) return;
@@ -125,6 +139,13 @@ function DndPage() {
                                 }}
                               >
                                 {item.content}
+                                <button
+                                  ref={provided.innerRef}
+                                  style={{
+                                    color: "#FF0000",
+                                    padding: "0",
+                                    float: "right",
+                                  }} onClick={() => removeTodo(item.id)}>[X]</button>
                               </div>
                             );
                           }}
