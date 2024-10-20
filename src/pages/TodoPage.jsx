@@ -42,6 +42,9 @@ function App() {
 
   return (
     <div className="">
+    <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" style={{
+      marginBottom: 10,
+    }} href="/drag-n-drop">Go to D&D!</a>
       <h1>My To-Do List</h1>
       <form onSubmit={addTodo}>
         <div class="flex rounded-lg shadow-sm">

@@ -77,6 +77,10 @@ function DndPage() {
     }
   };
   return (
+    <div className="">
+    <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" style={{
+      marginBottom: 10,
+    }} href="/">Go BACK!</a>
     <div
       style={{
         display: "flex",
@@ -161,6 +165,7 @@ function DndPage() {
           );
         })}{" "}
       </DragDropContext>
+    </div>
     </div>
   );
 }
