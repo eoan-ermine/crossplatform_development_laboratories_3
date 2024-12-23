@@ -7,8 +7,8 @@ function App() {
 	return (
 		<Router>
 			<Routes>
-				<Route path="/" element={<TodoPage />} />
-				<Route path="/drag-n-drop" element={<DndPage />} />
+				<Route path="/crossplatform_development_laboratories_2/" element={<TodoPage />} />
+				<Route path="/crossplatform_development_laboratories_2/drag-n-drop" element={<DndPage />} />
 			</Routes>
 		</Router>
 	);
